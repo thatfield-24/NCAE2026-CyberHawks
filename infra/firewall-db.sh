@@ -12,8 +12,8 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
 
 # allow established connections
-iptables -A INPUT -m conntrack --cstate ESTABLISHED, RELATED -j ACCEPT
-iptables -A OUTPUT -m conntrack --cstate ESTABLISHED, RELATED -j ACCEPT
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # ping
 iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
