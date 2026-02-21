@@ -9,7 +9,7 @@ iptables -P FORWARD DROP
 
 # allow loopback
 iptables -A INPUT -i lo -j ACCEPT
-iptables -A OUTPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
 
 # allow established connections
 iptables -A INPUT -m conntrack --cstate ESTABLISHED, RELATED -j ACCEPT
