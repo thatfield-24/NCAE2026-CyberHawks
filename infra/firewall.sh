@@ -31,6 +31,10 @@ iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
 iptables -A OUTPUT -p tcp --dport 53 -j ACCEPT
 
-# Allow outbound HTTP/HTTPS if needed
+# Allow inbound HTTP/HTTPS if a webserver
+# iptables -A INTPUT -p tcp --dport 80  -j ACCEPT
+# iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+
+# Allow outbound HTTP/HTTPS if access to web is needed. 
 # iptables -A OUTPUT -p tcp --dport 80  -j ACCEPT
 # iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
